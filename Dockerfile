@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-FROM nginx:mainline AS prod
+FROM nginx:mainline
 COPY --from=build /app/src/ /prod/export
 RUN npm run build
 EXPOSE 80

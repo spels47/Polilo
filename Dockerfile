@@ -8,6 +8,7 @@ COPY . .
 
 FROM build
 COPY --from=build /app/src/ /prod/export
+RUN npm install
 RUN npm run build
 EXPOSE 8080
 CMD [ "http-server", "dist" ]

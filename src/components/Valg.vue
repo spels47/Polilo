@@ -91,6 +91,7 @@ export default {
           break;
         case "R":
           //response = await axios.get(`https://localhost:44336/api/Documents/Rødt`);
+          //response = await axios.get(`167.71.68.222:8086/api/Documents/Rødt`);
           response = await axios.get(`polilo.ornell.io/api/Documents/Rødt`);
           await FileDownload(response.data,"Rødt.pdf");
           break;

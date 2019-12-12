@@ -4,8 +4,8 @@
       <a id="logo">Valg</a>
     </div>
 
-    <img src="../assets/logo.png">
-    <h2 style="margin:0px, padding:0px" class="MiniLogo">Last Ned Valgløfter Nedenfor</h2>
+    <img src="../assets/logo2.png">
+    <h2 style="margin:0px, padding:0px" class="MiniLogo">Last Ned Partiprogram Nedenfor</h2>
 
     <div id="body">
         <ul id="menu">

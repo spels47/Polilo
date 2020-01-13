@@ -52,7 +52,7 @@ export default {
           response = [];
           for(let i = 0; i < 9;i++){
             //response[i] = await axios.get(`https://localhost:44336/api/Documents/${this.PartyList[i]}`);
-            response[i] = await axios.get(`167.71.68.222:5000/api/Documents/${this.PartyList[i]}`);
+            response[i] = await axios.get(`http://www.polilo.net:5000/api/Documents/${this.PartyList[i]}`);
             //response[i] = await axios.get(`polilo.ornell.io/api/Documents/${this.PartyList[i]}`);
           }
           for(let k = 0; k < 9;k++){
@@ -67,49 +67,49 @@ export default {
           break;
         case "FP":
           //response = await axios.get(`https://localhost:44336/api/Documents/Fremskrittspartiet`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Fremskrittspartiet`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Fremskrittspartiet`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Fremskrittspartiet`);
           await FileDownload(response.data,"Fremskrittspartiet.pdf");
           break;
         case "H":
           //response = await axios.get(`https://localhost:44336/api/Documents/Høyre`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Høyre`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Høyre`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Høyre`);
           await FileDownload(response.data,"Høyre.pdf");
           break;
         case "KFP":
           //response = await axios.get(`https://localhost:44336/api/Documents/KristeligFolkeparti`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/KristeligFolkeparti`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/KristeligFolkeparti`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/KristeligFolkeparti`);
           await FileDownload(response.data,"Kristelig Folkeparti.pdf");
           break;
         case "MDG":
           //response = await axios.get(`https://localhost:44336/api/Documents/Miljøpartiet De Grønne`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Miljøpartiet De Grønne`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Miljøpartiet De Grønne`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Miljøpartiet De Grønne`);
           await FileDownload(response.data,"Miljøpartiet De Grønne.pdf");
           break;
         case "R":
           //response = await axios.get(`https://localhost:44336/api/Documents/Rødt`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Rødt`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Rødt`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Rødt`);
           await FileDownload(response.data,"Rødt.pdf");
           break;
         case "SP":
           //response = await axios.get(`https://localhost:44336/api/Documents/Senterpartiet`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Senterpartiet`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Senterpartiet`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Senterpartiet`);
           await FileDownload(response.data,"Senterpartiet.pdf");
           break;
         case "SV":
           //response = await axios.get(`https://localhost:44336/api/Documents/Sosialistisk Venstreparti`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Sosialistisk Venstreparti`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Sosialistisk Venstreparti`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Sosialistisk Venstreparti`);
           await FileDownload(response.data,"Sosialistisk Venstreparti.pdf");
           break;
         case "V":
           //response = await axios.get(`https://localhost:44336/api/Documents/Venstre`);
-          response = await axios.get(`167.71.68.222:5000/api/Documents/Venstre`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Venstre`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Venstre`);
           await FileDownload(response.data,"Venstre.pdf");
           break;

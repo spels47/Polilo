@@ -61,7 +61,7 @@ export default {
           break;
         case "AP":
           //response = await axios.get(`https://localhost:44336/api/Documents/Arbeiderpartiet`);
-          response = await axios.get(`:5000/api/Documents/Arbeiderpartiet`);
+          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Arbeiderpartiet`);
           //response = await axios.get(`polilo.ornell.io/api/Documents/Arbeiderpartiet`);
           await FileDownload(response.data,"Arbeiderpartiet.pdf");
           break;

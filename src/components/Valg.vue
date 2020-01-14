@@ -9,16 +9,16 @@
 
     <div id="body">
         <ul id="menu">
-          <li><a id="ALLE" style="background-color: rgba(80, 80, 80, 0.5);" @click='GetDocuments("ALLE")'><span>Alle</span></a></li><br><br>
-          <li><a id="AP" style="background-color: rgba(224, 18, 32, 0.5);" @click='GetDocuments("AP")'><span>Arbeiderpartiet</span></a></li><br><br>
-          <li><a id="FP" style="background-color: rgba(2, 76, 147, 0.5);" @click='GetDocuments("FP")'><span>Fremskrittspartiet</span></a></li><br><br>
-          <li><a id="H" style="background-color: rgba(0, 79, 139, 0.5);" @click='GetDocuments("H")'><span>Høyre</span></a></li><br><br>
-          <li><a id="KFP" style="background-color: rgba(238, 64, 58, 0.5);" @click='GetDocuments("KFP")'><span>KristeligFolkeparti</span></a></li><br><br>
-          <li><a id="MDG" style="background-color: rgba(86, 149, 71, 0.5);" @click='GetDocuments("MDG")'><span>Miljøpartiet De Grønne</span></a></li><br><br>
-          <li><a id="R" style="background-color: rgba(233, 3, 2, 0.5);" @click='GetDocuments("R")'><span>Rødt</span></a></li><br><br>
-          <li><a id="SP" style="background-color: rgba(0, 133, 66, 0.5);" @click='GetDocuments("SP")'><span>Senterpartiet</span></a></li><br><br>
-          <li><a id="SV" style="background-color: rgba(220, 0, 40, 0.5);" @click='GetDocuments("SV")'><span>Sosialistisk Venstreparti</span></a></li><br><br>
-          <li><a id="V" style="background-color: rgba(0, 102, 102, 0.5);" @click='GetDocuments("V")'><span>Venstre</span></a></li><br><br>
+          <!-- <li><a id="ALLE" style="background-color: rgba(80, 80, 80, 0.5);" @click='GetDocuments("ALLE")'><span>Alle</span></a></li><br><br> -->
+          <li><a href="http://www.polilo.net:5000/api/Documents/Arbeiderpartiet" id="AP" style="background-color: rgba(224, 18, 32, 0.5);"><span>Arbeiderpartiet</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Fremskrittspartiet" id="FP" style="background-color: rgba(2, 76, 147, 0.5);"><span>Fremskrittspartiet</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Høyre" id="H" style="background-color: rgba(0, 79, 139, 0.5);"><span>Høyre</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/KristeligFolkeparti" id="KFP" style="background-color: rgba(238, 64, 58, 0.5);"><span>KristeligFolkeparti</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Miljøpartiet De Grønne" id="MDG" style="background-color: rgba(86, 149, 71, 0.5);"><span>Miljøpartiet De Grønne</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Rødt" id="R" style="background-color: rgba(233, 3, 2, 0.5);"><span>Rødt</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Senterpartiet" id="SP" style="background-color: rgba(0, 133, 66, 0.5);"><span>Senterpartiet</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Sosialistisk Venstreparti" id="SV" style="background-color: rgba(220, 0, 40, 0.5);"><span>Sosialistisk Venstreparti</span></a></li><br><br>
+          <li><a href="http://www.polilo.net:5000/api/Documents/Venstre" id="V" style="background-color: rgba(0, 102, 102, 0.5);"><span>Venstre</span></a></li><br><br>
       </ul>
     </div>
   </div>
@@ -28,95 +28,7 @@
 import axios from "axios";
 import FileDownload from"js-file-download";
 export default {
-  name: 'Home',
-  data () {
-    return {
-      PartyList: [
-        "Arbeiderpartiet",
-        "Fremskrittspartiet",
-        "Høyre",
-        "KristeligFolkeparti",
-        "Miljøpartiet De Grønne",
-        "Rødt",
-        "Senterpartiet",
-        "Sosialistisk Venstreparti",
-        "Venstre"
-        ],
-    }
-  },
-  methods: {
-    GetDocuments: async function (element){
-      let response;
-      switch(element){
-        case "ALLE":
-          response = [];
-          for(let i = 0; i < 9;i++){
-            //response[i] = await axios.get(`https://localhost:44336/api/Documents/${this.PartyList[i]}`);
-            response[i] = await axios.get(`http://www.polilo.net:5000/api/Documents/${this.PartyList[i]}`);
-            //response[i] = await axios.get(`polilo.ornell.io/api/Documents/${this.PartyList[i]}`);
-          }
-          for(let k = 0; k < 9;k++){
-            await FileDownload(response[k].data,`${this.PartyList[k]}.pdf`);
-          }
-          break;
-        case "AP":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Arbeiderpartiet`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Arbeiderpartiet`);
-          console.log(response);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Arbeiderpartiet`);
-          await FileDownload(response.data,"Arbeiderpartiet.pdf");
-          break;
-        case "FP":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Fremskrittspartiet`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Fremskrittspartiet`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Fremskrittspartiet`);
-          await FileDownload(response.data,"Fremskrittspartiet.pdf");
-          break;
-        case "H":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Høyre`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Høyre`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Høyre`);
-          await FileDownload(response.data,"Høyre.pdf");
-          break;
-        case "KFP":
-          //response = await axios.get(`https://localhost:44336/api/Documents/KristeligFolkeparti`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/KristeligFolkeparti`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/KristeligFolkeparti`);
-          await FileDownload(response.data,"Kristelig Folkeparti.pdf");
-          break;
-        case "MDG":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Miljøpartiet De Grønne`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Miljøpartiet De Grønne`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Miljøpartiet De Grønne`);
-          await FileDownload(response.data,"Miljøpartiet De Grønne.pdf");
-          break;
-        case "R":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Rødt`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Rødt`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Rødt`);
-          await FileDownload(response.data,"Rødt.pdf");
-          break;
-        case "SP":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Senterpartiet`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Senterpartiet`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Senterpartiet`);
-          await FileDownload(response.data,"Senterpartiet.pdf");
-          break;
-        case "SV":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Sosialistisk Venstreparti`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Sosialistisk Venstreparti`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Sosialistisk Venstreparti`);
-          await FileDownload(response.data,"Sosialistisk Venstreparti.pdf");
-          break;
-        case "V":
-          //response = await axios.get(`https://localhost:44336/api/Documents/Venstre`);
-          response = await axios.get(`http://www.polilo.net:5000/api/Documents/Venstre`);
-          //response = await axios.get(`polilo.ornell.io/api/Documents/Venstre`);
-          await FileDownload(response.data,"Venstre.pdf");
-          break;
-      }
-    }
-  }
+  name: 'Home'
 }
 </script>
 

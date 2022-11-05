@@ -2,6 +2,11 @@
 
 > polilo client
 
+the website is hosted at www.polilo.net
+it has not been maintained in a while and the database is wiped since the state was outdated
+
+![image](https://user-images.githubusercontent.com/34216925/200139196-7ec964c0-e014-4959-b8eb-2defb8237005.png)
+
 ## Build Setup
 
 ``` bash

@@ -1,6 +1,6 @@
-# politico
+# polilo
 
-> politico client
+> polilo client
 
 ## Build Setup
 
